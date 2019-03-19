@@ -1,0 +1,55 @@
+
+<!-- <ul> -->
+  <!-- <li *ngFor="let user of users">{{ user.name }}</li> -->
+<!-- </ul> -->
+
+
+<h1>New User add style</h1>
+ <!-- <form #userForm="ngForm" (ngSubmit) = "insertdata()" > -->
+ <form #userForm="ngForm">
+      <label>First Name <span>*</span></label>
+      <input type="text"   class="form-control" [(ngModel)]="name" name="name" autocomplete="off"  required >  
+      <label> Id </label>
+      <input type="text" class="form-control" [(ngModel)]="User_Id" name="User_Id" />	  
+      <!-- <button [disabled]="!userForm.valid" value="Submit">Submit</button> -->
+	  <button [disabled]="!userForm.valid" (click)="insertdata(User_Id, name)">Submit</button>
+	  <button [disabled]="!userForm.valid" (click)="UpdateUser(User_Id , name)" >Update</button>
+ </form>
+
+ {{ida}}
+<br/>
+<br/>
+<br/>
+<br/>
+
+<table class="table table-striped">
+<thead>
+	<tr>
+		<th>User Id </th>
+		<th>Name </th>
+		<th>Action</th>
+	</tr>
+</thead>
+<tbody>
+	<tr *ngFor="let user of users">
+	    <td>  {{ user.User_Id }}</td>
+		<td>  {{ user.name }}</td>		
+		
+		<td>
+		
+		<a href="#" class="btn btn-success"  (click)="editdata(user.name , user.User_Id)" > Edit </a> 
+		<span> || </span>
+		<a href="#" class="btn btn-danger" (click)="deletedata(user.User_Id)" > Delete </a>
+		
+		</td>
+
+	</tr>
+</tbody>
+</table>
+
+
+
+
+ 
+ 
+ 

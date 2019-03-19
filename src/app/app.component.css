@@ -1,0 +1,12 @@
+.table.table-striped {
+    border: 1px solid;
+	width: 100%;
+}
+
+table.table-striped > tbody > tr > td {
+
+    border: 1px solid #000;
+	text-align : center;
+
+}
+
